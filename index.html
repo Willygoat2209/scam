@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopEZ - Online Deals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ShopEZ</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Deals</a>
+      <a href="#">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Featured Products</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Product 1"/>
+        <p>Wireless Headphones - $49.99</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Product 2"/>
+        <p>Smart Watch - $79.99</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ShopEZ. This site is a simulation for educational use only.</p>
+  </footer>
+
+  <div id="scam-popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>⚠️ SECURITY ALERT</h2>
+      <p>Your device may be at risk! Suspicious activity has been detected.</p>
+      <p>Immediate action is required to protect your files and personal data.</p>
+      <button onclick="fakeFix()">Fix Now</button>
+      <button onclick="dismissPopup()">Dismiss</button>
+      <p class="disclaimer">This is a SAFE simulation for educational use only.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
