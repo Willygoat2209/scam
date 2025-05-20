@@ -32,6 +32,7 @@ main {
 .products {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .product {
@@ -40,6 +41,15 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 5px #ccc;
   text-align: center;
+  width: 200px;
+}
+
+.product img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 footer {
