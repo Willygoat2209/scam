@@ -1,107 +1,214 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset some basics */
+* {
   margin: 0;
-  background: #f2f2f2;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and Navigation */
 header {
-  background-color: #333;
+  background-color: #1e2a38;
   color: white;
-  padding: 1rem;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
-  margin: 0;
-  display: inline-block;
-}
-
-nav {
-  float: right;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
 }
 
 nav a {
-  color: white;
-  margin-left: 20px;
+  color: #cbd5e1;
   text-decoration: none;
+  margin-left: 1.6rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
+nav a:hover {
+  color: #60a5fa; /* Tailwind blue-400 */
+}
+
+/* Main content */
 main {
-  padding: 2rem;
+  flex-grow: 1;
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
 }
 
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 3px solid #60a5fa;
+  padding-bottom: 0.4rem;
+}
+
+/* Products grid */
 .products {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
 }
 
+/* Individual product cards */
 .product {
   background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
   padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 5px #ccc;
-  text-align: center;
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgb(96 165 250 / 0.3);
 }
 
 .product img {
-  width: 150px;
-  height: auto;
-  object-fit: cover;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #f3f4f6; /* subtle light gray background */
 }
 
-footer {
+.product p {
+  font-weight: 600;
+  color: #1e293b;
   text-align: center;
-  padding: 1rem;
-  background-color: #eee;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  min-height: 50px;
 }
 
+.product button {
+  background-color: #2563eb; /* blue-600 */
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.product button:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+/* Footer */
+footer {
+  background-color: #1e2a38;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Scam popup styling */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(30, 42, 56, 0.9);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 9999;
+  transition: opacity 0.4s ease;
 }
 
 .popup.hidden {
   display: none;
+  opacity: 0;
 }
 
 .popup-content {
-  background-color: white;
-  padding: 2rem;
-  border: 4px solid red;
-  text-align: center;
-  max-width: 400px;
-  box-shadow: 0 0 20px red;
+  background: #fef2f2;
+  padding: 2rem 2.5rem;
   border-radius: 10px;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
+  text-align: center;
+  color: #991b1b; /* dark red */
+  font-weight: 700;
+  user-select: none;
 }
 
 .popup-content h2 {
-  color: red;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.popup-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.4rem;
 }
 
 .popup-content button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-weight: bold;
-  background-color: red;
+  background-color: #dc2626;
   color: white;
   border: none;
-  border-radius: 5px;
+  font-weight: 700;
+  padding: 0.5rem 1.3rem;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.disclaimer {
-  margin-top: 15px;
+.popup-content button:hover {
+  background-color: #b91c1c;
+}
+
+.popup-content .disclaimer {
+  margin-top: 1rem;
+  font-weight: 400;
   font-size: 0.8rem;
-  color: gray;
+  color: #991b1baa;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header, footer {
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  nav a {
+    display: inline-block;
+    margin: 0.5rem 0.8rem;
+  }
+  
+  .product img {
+    width: 140px;
+    height: 140px;
+  }
 }
