@@ -4,7 +4,7 @@ setTimeout(() => {
 }, 5000);
 
 function fakeFix() {
-  alert("Fake fix in progress...\nThis is just a simulation.");
+  alert("Fix in progress...\n Please do not close tab");
 }
 
 function dismissPopup() {
